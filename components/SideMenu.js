@@ -1,5 +1,7 @@
 import * as React from 'react';
 import {Text, View, StyleSheet, ViewPropTypes } from 'react-native';
+import { css } from 'styled-components';
+import styled from 'styled-components/native';
 import {
   Router,
   Scene,
@@ -11,26 +13,29 @@ import Button from 'react-native-button';
 export default class SideMenu extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
+      <Container>
         <Button onPress={() => {Actions.home()}}>
-          <Text>home</Text>
+          <Title>Home</Title>
         </Button>
         <Button
           onPress={() => {Actions.setting()}}>
-          <Text>next</Text>
+          <Title>Setting</Title>
         </Button>
-      </View>
+      </Container>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#fff',
-    borderWidth: 2,
-    borderColor: '#000',
-  },
-});
+const Container = styled.View`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-width: 2;
+  border-color: #000;
+`;
+
+const Title = styled.Text`
+  font-weight: bold;
+  margin: 20px;
+`;

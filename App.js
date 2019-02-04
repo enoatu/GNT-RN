@@ -17,15 +17,28 @@ export default class App extends React.Component {
   render() {
     return (
       <Router>
-        <Scene key="root" hideNavBar={true}>
+        <Scene key="root"
+          hideNavBar={true}
+        >
           <Drawer
             key="drawer"
             drawerWidth={300}
             contentComponent={SideMenu}
-            styles={{ backgroudColor: '#ff0' }}
+            swipeEnabled={true}
+            styles={{backgroudColor: '#ff0'}}
           >
-            <Scene key="home" title="home" component={Home} />
-            <Scene key="setting" title="setting" component={Setting} />
+            <Scene
+              key="home"
+              title="home"
+              component={Home}
+              titleStyle={styles.drawerTitle}
+            />
+            <Scene
+              key="setting"
+              title="setting"
+              component={Setting}
+              titleStyle={styles.drawerTitle}
+            />
           </Drawer>
         </Scene>
       </Router>
@@ -34,12 +47,9 @@ export default class App extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'transparent',
-    borderWidth: 2,
-    borderColor: 'red',
+  drawerTitle: {
+    margin: 100,
+    fontSize:10,
+    color: '#0f0',
   },
 });
