@@ -46,6 +46,7 @@ export default class Home extends React.Component {
                <DelBtn onPress={() => this.deleteTodo(i)} title='x' />
               </Li>
           ))}
+          {this.state.todo.length == 0 && <Text>NoData</Text>}
           </ScrollContainer>
       </ScrollView>
     );
