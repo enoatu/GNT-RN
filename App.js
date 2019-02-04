@@ -9,9 +9,11 @@ import {
 } from 'react-native-router-flux';
 import Button from 'react-native-button';
 import Home from './components/Home';
+import TmpTodo from './components/TmpTodo';
 import Intro from './components/Intro';
 import Setting from './components/Setting';
 import SideMenu from './components/SideMenu';
+import Daily from './components/Daily';
 
 export default class App extends React.Component {
   render() {
@@ -31,6 +33,19 @@ export default class App extends React.Component {
               key="home"
               title="home"
               component={Home}
+              titleStyle={styles.drawerTitle}
+            />
+            <Scene
+              key="tmpTodo"
+              title="tmpTodo"
+              initial
+              component={TmpTodo}
+              titleStyle={styles.drawerTitle}
+            />
+            <Scene
+              key="daily"
+              title="daily"
+              component={Daily}
               titleStyle={styles.drawerTitle}
             />
             <Scene

@@ -17,6 +17,13 @@ export default class SideMenu extends React.Component {
         <Button onPress={() => {Actions.home()}}>
           <Title>Home</Title>
         </Button>
+        <Button onPress={() => {Actions.tmpTodo()}}>
+          <Title>TODO</Title>
+        </Button>
+        <Button
+          onPress={() => {Actions.daily()}}>
+          <Title>Daily</Title>
+        </Button>
         <Button
           onPress={() => {Actions.setting()}}>
           <Title>Setting</Title>
